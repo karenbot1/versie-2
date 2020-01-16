@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {}
+
+header {
+    background: white;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 100%;
+    z-index: 3;
+}
+
+/* navigatie */
+nav {
+    align-items: center;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: rosybrown;
+}
+
+
+
+.nav-links {
+
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+
+
+    padding: 1.25em;
+    font-size: 1.25em;
+
+    //border-bottom: 0.5em solid grey;
+    margin: 0em 1em 0em 1em;
+
+}
+
+
+
+img.logo {
+
+    margin: -1em 0em -1.5em 2em;
+}
+
+.logo {
+    flex-grow: 1;
+    width: 5em;
+    height: auto;
+    transition: 2s;
+}
+
+
+
+.logo:hover {
+    transform: scale(1.07,1);
+    
+}
+
+
+
+/* https://www.youtube.com/watch?v=gXkqy0b4M5g&t=1335s filmpje over uitleg hamburger menu*/
+
+
+.nav-links li {
+    list-style: none;
+    margin: 1em 0em 0.5em 0em;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    margin: 1em 0.5em 1em 0em;
+    color: #efefef;
+    transition: 2s;
+
+
+}
+
+.nav-links a:hover {
+    background-color: none;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 0.25em solid #efefef;
+    color: #1f1f1f;
+}
+
+
+
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+    margin: 0em 1em 0em 1em;
+}
+
+.burger div {
+    width: 2.25em;
+    height: 0.3em;
+    background-color: #121212;
+    margin: 0.35em;
+
+}
+
+@media (max-width: 70em) {
+    .nav-links {
+        width: 50%;
+
+    }
+}
+
+
+@media (max-width: 50em) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0em;
+        height: 92vh;
+        top: 8vh;
+        background-color: rosybrown;
+        margin: 0em 0em 0em 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    img.logo {
+        max-width: 3em;
+        margin: -1em 0em -1.2em 2em;
+    }
+
+
+    @media screen and (max-width: 40em) {
+        fieldset {
+            background-color: hotpink;
+        }
+    }
+
+
+
+}
+
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+
+/* projecten */
+
+.container2 {
+    display: grid;
+    grid-column: 3;
+    grid-gap: 5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 10em 10em 10em 10em;
+    float: left;
+
+}
+
+section {
+    grid-column-start: 1/4;
+    background-color: black;
+    justify-content: space-around;
+    transition: 2s;
+}
+
+section:hover {
+    transform: rotate(180deg);
+}
+
+
+
+
+img.mi {
+    width: 20em;
+    height: auto;
+}
+
+
+@media (max-width:81em) {
+    .container2 {
+        display: grid;
+        grid-column: 2;
+        grid-gap: 5em;
+        grid-template-columns: 1fr 1fr;
+        margin: 10em 10em 10em 10em;
+        float: left;
+
+    }
+}
+
+@media (max-width: 70em) {
+    form {
+        display: grid;
+        grid-column: 1;
+        margin: 0em 0em 0em -10em;
+        float: left;
+    }
+}
+
+
+
+
+
+@media (max-width:58em) {
+    section {
+        display: grid;
+        grid-column: 1;
+    }
+}
+
+
+@media (max-width: 40em) {
+    section {
+        display: grid;
+        grid-column: 1;
+        margin: 0em 0em 0em -4.5em;
+    }
+
+}
+
+/* formulier */
+
+form {
+    margin: 10vw 20vw 10vw 20vw;
+}
+
+
+fieldset {
+    border: 10px double rosybrown;
+    background-color: white;
+    font-family: 'Inria Serif', serif;
+}
+
+
+
+
+legend {
+    text-decoration: underline;
+    text-align: left;
+    margin: 2em 0em 1em 2em;
+    font-size: 1.2em;
+}
+
+
+legend:nth-of-type(1) {
+    font-size: 2em;
+    text-decoration: none;
+    font-family: 'Inria Serif', serif;
+    text-align: center;
+}
+
+
+label {
+    margin: 0.75em 0em 0.75em 4em;
+    display: block;
+    font-size: 1em;
+}
+
+#verzenden {
+    color: white;
+    background-color: rosybrown;
+    font-size: 1.5em;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 2vw 2vw 2vw 0vw;
+    align-items: center;
+
+}
+
+input: invalid {
+    background: red;
+}
+
+input:valid {
+    border-color: black;
+    background-color: green;
+}
+
+/* ------------------------------------------------------------------------ */
+/* OVER MIJ */
+
+.selfie {
+
+    width: 19em;
+    float: right;
+    margin: 0em 2em 2em 10em;
+    -webkit-box-shadow: -17px 17px 43px -2px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: -17px 17px 43px -2px rgba(0, 0, 0, 0.57);
+    box-shadow: -17px 17px 43px -2px rgba(0, 0, 0, 0.57);
+
+    transition: width 2s, height 2s, transform 2s;
+
+
+}
+
+.selfie:hover {
+    transform: rotate(360deg);
+    width: 23em;
+
+}
+
+/* box-shadow gemaakt met https://www.cssmatic.com/box-shadow */
+
+article.inhetkort {
+    margin-left: 40em;
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.palmtree {
+    width: 4em;
+}
+
+
+.titel{
+    margin: 2em 2em 0em 0em;
+}
+
+
+@media (max-width: 50em){
+    article.inhetkort{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
